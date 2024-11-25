@@ -1,7 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {isUserLoggedIn, logout} from "../services /AuthService";
+import {isUserLoggedIn, logout} from "../services/AuthService";
 import {useNavigate} from "react-router-dom";
+
 
 function Header(){
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Header(){
     }
 
     return(
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <nav className="navbar navbar-expand navbar-dark bg-primary">
         <div>
             <a className="navbar-brand" href="http://localhost:3000">Employee Management System</a>
         </div>
@@ -35,7 +36,7 @@ function Header(){
             }
             {
                 isAuth &&  <li className="nav-item">
-                    <NavLink to="/login" className="nav-link" onClick={handleLogout}>Logout</NavLink>
+                    <NavLink to="/logout" className="nav-link" onClick={handleLogout}>Logout</NavLink>
                 </li>
             }
         </ul>
